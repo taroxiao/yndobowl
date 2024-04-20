@@ -1,0 +1,245 @@
+<html>
+    <head>
+        <title>Marketplace</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dela+Gothic+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Gowun+Batang&family=IM+Fell+English&family=Instrument+Serif&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Noto+Sans+SC:wght@100..900&family=Outfit:wght@100..900&family=Rubik+Mono+One&display=swap" rel="stylesheet">    
+
+        <style>
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: linear-gradient(to bottom right, rgb(240, 247, 244), #c7ebdf);
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                border-radius: 15px;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 200px;
+                z-index: 1;
+                border-radius: 15px;
+            }
+
+            .dropdown-content a {
+                font-size: 20px;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                border-radius: 15px;
+            }
+
+           .dropdown-content a:hover {
+                background-color: #096a5e;
+                background-color: #f1f1f1;
+            }
+    
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .navbar{
+                font-family: Dela Gothic One;
+                display: float;
+                font-size: 24px;
+                text-align: center;
+            }
+
+            .navbar a {
+                    color: black;
+                    text-decoration: none;
+            }
+
+            #slogan {
+                display: block; 
+                margin: auto;
+                font-size: 40px;
+                clear: both;
+                color: #096a5e;
+                text-align: center;
+                font-family: Dela Gothic One;
+                margin-top: 5%;
+                margin-bottom: 5%;
+            }
+
+            #content{
+                font-family: Lexend Deca;
+            }
+
+            #statements{
+                background-color: white;
+                margin-right: 10%;
+                margin-left: 10%;
+                border-radius: 15px;
+            }
+
+            .competitor{
+
+                background-color: white;
+                border-radius: 15px;
+                width: 250px;
+                text-align: center;
+                padding: 2%;
+
+            }
+
+            #competitors{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 25px;
+                
+            }
+
+            .competitorImage{
+                width: 75%;
+                border-radius: 15px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="navbar">
+            <a href="product_purchase_page.html">Product</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+    
+            <a href="YndoHomepage.html"><img src="yndo logo.png" width="150px" alt="Hyperlinked Image"></a>
+    
+            <div class="dropdown">
+                &nbsp&nbsp&nbsp&nbsp&nbsp<a href="#">About Us</a>
+                <div class="dropdown-content">
+                    <a href="marketplace.html">Marketplace / Competitive Analysis</a>
+                    <a href="investment.html">Investment / Business Model</a>
+                    <a href="about.html">About</a>
+                    <a href="stateHolders.html">Stakeholders Page</a>
+                    <a href="behindTheScrenes.html">Behind the Scenes Page</a>
+                    <a href="websiteTeam.html">Website Team</a>
+                </div>
+            </div>
+        
+        </div>
+
+            <div id="content">
+
+                <div id="statements">
+                    
+                    <h1 id="slogan" style="padding: 5%;">Problem and Solution Statement</h1>
+                    
+                    <div id="problem" style="padding: 2.5%;">
+                        <h2>Problem Statement</h2>
+                        <p>In today's fast-paced world, busy individuals struggle to find time for home-cooked meals, often resorting to unhealthy fast food options. Traditional cookware requires multiple utensils for meal prep, cooking, and storage, adding to the inconvenience and time consumption.</p>
+                    </div>
+                    <div id="solution" style="padding: 2.5%;">
+                        <h2>Solution Statement</h2>
+                        <p>Yndo Bowl offers an innovative all-in-one solution that simplifies meal preparation, cooking, and storage. Its unique design features a ceramic insulated outer layer and an integrated steel plate for induction cooking as well as microwaving, allowing users to cook and heat meals directly in the bowl. The bowl's insulation keeps the bottom cool to the touch for easy handling and maintains food temperature during transport, providing a convenient and time-saving solution for home cooking.</p>
+                    </div>
+                </div>
+
+                <h1 id="slogan">Competitors</h1>
+
+                <div id="competitors">
+
+                    <div class="competitor">
+                        <h3>STEAMBOX - Self heating lunchbox</h3>
+                        <img src="steambox.jpeg" class="competitorImage">
+                        <p><b>MSRP: </b>$277</p>
+                        <p><b>Pros: </b>Self contained heating unit</p>
+                        <p><b>Cons: </b>Cleaning is labor intensive</p>
+                    </div>
+
+                    <div class="competitor">
+                        <h3>Unifo Bento</h3>
+                        <img src="Unifo Bento.jpeg" class="competitorImage">
+                        <p><b>MSRP: </b>$14</p>
+                        <p><b>Pros: </b>Insulated, lightweight, versatile</p>
+                        <p><b>Cons: </b>Plastic latches break with use</p>
+                    </div>
+
+                    <div class="competitor">
+                        <h3>PREP DECK by Dash</h3>
+                        <img src="prepDeck.png" class="competitorImage">
+                        <p><b>MSRP: </b>$149</p>
+                        <p><b>Pros: </b>Meal prep for multiple people</p>
+                        <p><b>Cons: </b>Counter top space hog, small portion size</p>
+                    </div>
+
+                    <div class="competitor">
+                        <h3>StoJO food storage system</h3>
+                        <img src="StoJO .png" class="competitorImage">
+                        <p><b>MSRP: </b>$189</p>
+                        <p><b>Pros: </b>Collapsible and compact</p>
+                        <p><b>Cons: </b>Only sold in sets, does not insulate well</p>
+                    </div>
+
+                    <div class="competitor">
+                        <h3>Fuigo compartmentalized food storage</h3>
+                        <img src="Fuigo.jpg" class="competitorImage">
+                        <p><b>MSRP: </b>$120 (set of 4)</p>
+                        <p><b>Pros: </b>Thermal vacuum walled, separate compartments</p>
+                        <p><b>Cons: </b>Focused on liquids, limited volume</p>
+                    </div>
+
+                    <div class="competitor">
+                        <h3>SLAP CHOP</h3>
+                        <img src="SLAP CHOP.png" class="competitorImage">
+                        <p><b>MSRP: </b>$40</p>
+                        <p><b>Pros: </b>Quick and consistent chop</p>
+                        <p><b>Cons: </b>Hand wash only</p>
+                    </div>
+
+                    <div class="competitor">
+                        <h3>The humble deli container</h3>
+                        <img src="humbleDeliContainer.jpeg" class="competitorImage">
+                        <p><b>MSRP: </b>$00.75</p>
+                        <p><b>Pros: </b>Cheap, stsable, stackable</p>
+                        <p><b>Cons: </b>No insulation</p>
+                    </div>
+
+                    <div class="competitor">
+                        <h3>Stanley Farm to Table bowl</h3>
+                        <img src="Stanley.png" class="competitorImage">
+                        <p><b>MSRP: </b>$30</p>
+                        <p><b>Pros: </b>Indestructible, insulated, dishwasher safe</p>
+                        <p><b>Cons: </b>NOT microwave safe</p>
+                    </div>
+
+                    <div class="competitor">
+                        <h3>Stackable bento Box - Temu</h3>
+                        <img src="Temu.jpeg" class="competitorImage">
+                        <p><b>MSRP: </b>$12.99</p>
+                        <p><b>Pros: </b>Scalable sizing, microwavable, dishwasher safe</p>
+                        <p><b>Cons: </b>Cheap plastic</p>
+                    </div>
+
+                    <div class="competitor">
+                        <h3>Crockpot</h3>
+                        <img src="Crockpot.jpg" class="competitorImage">
+                        <p><b>MSRP: </b>$75</p>
+                        <p><b>Pros: </b>Set and forget, large portions, minimal prep</p>
+                        <p><b>Cons: </b>Not portable</p>
+                    </div>
+
+                </div>
+
+                <h1 id="slogan">Competitive Matrices</h1>
+            
+                <div id="matrix">
+                    
+                    <img src="matrix.png" style="width: 75%; display: block; margin: auto; border-radius: 15px; margin-bottom: 5%;">
+
+                </div>
+
+            </div>
+        
+
+    </body>
+</html>

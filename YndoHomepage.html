@@ -1,0 +1,370 @@
+<html>
+  <head>
+    <title>Yndo Bowl</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dela+Gothic+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Gowun+Batang&family=IM+Fell+English&family=Instrument+Serif&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Noto+Sans+SC:wght@100..900&family=Outfit:wght@100..900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to bottom right, rgb(240, 247, 244), #c7ebdf);
+        }
+
+        .productimage {
+            width: 75%;
+        }
+       
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            border-radius: 15px;
+        }
+
+      
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            z-index: 1;
+            border-radius: 15px;
+        }
+
+        .dropdown-content a {
+            font-size: 20px;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #096a5e;
+            color: white;
+
+        }
+
+     
+        .dropdown:hover .dropdown-content {
+            display: block;
+            font-family: Lexend Deca;
+            background-color: rgb(240, 247, 244);
+        }
+
+        .navbar{
+            font-family: Dela Gothic One;
+            display: float;
+            font-size: 24px;
+            text-align: center;
+        }
+            .navbar a {
+                color: black;
+                text-decoration: none;
+            }
+
+
+        #slogan {
+            display: block; 
+            margin: auto;
+            font-size: 40px;
+            clear: both;
+            color: #096a5e;
+            text-align: center;
+            font-family: Dela Gothic One;
+        }
+        
+        #photogallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; 
+        }
+
+        #thumbnails {
+            display: flex;
+            justify-content: center; 
+            flex-wrap: wrap; 
+            margin-top: 20px; 
+            width: auto;
+        }
+
+        .thumb {
+            margin: 5px; 
+            width: 150px; height: 150px; 
+            border: 2px transparent solid;
+            cursor: pointer; 
+        }
+
+        #mainphoto {
+            width: 600px; height: 600px;
+            display: block;
+            margin-bottom: 20px; 
+        }
+
+        #mainbanner {
+            display: flex; 
+            margin: 30px;
+            flex-direction: column; 
+            align-items: center; 
+            font-family: Lexend Deca;
+        }
+
+        #mainbanner h2 {
+            width: 60%;
+            font-size: 34px; 
+            text-align: center; 
+            margin: 20px;
+        }
+
+        #mainbanner button {
+            background-color: #096a5e;
+            color: rgb(255, 255, 255);
+            padding: 18px 32px;
+            text-align: center;
+            font-family: Dela Gothic One;
+            display: inline-block;
+            font-size: 24px;
+            margin: 4px;
+            border: none;
+            border-radius: 10px;
+        }
+        #mainbanner img {
+            width: 50%;
+        }
+    
+        
+
+        #features {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px;
+            font-family: Lexend Deca;
+        }
+
+        #features #feature1,
+        #features #feature2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        #features img {
+            width: 50%;
+            margin-right: 20px;
+        }
+
+        #features p {
+            width: 60%;
+            font-size: 24px;
+            text-align: left;
+        }
+
+        #reviews {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            margin: 30px;
+            font-size: 24px;
+            text-align: center;
+            font-family: Lexend Deca;
+        }
+
+        #reviews ul {
+            list-style-type: none;
+            line-height: 2;
+        }
+
+        #buy{   
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            margin: 30px;
+            font-size: 24px;
+            text-align: center;
+            font-family: Dela Gothic One;
+        }
+
+        #buy strong {
+            color: #096a5e;
+        }
+
+
+        #buy button {
+            background-color: #ffffff;
+            color: #096a5e;
+            padding: 18px 32px;
+            text-align: center;
+            font-family: Dela Gothic One;
+            display: inline-block;
+            font-size: 24px;
+            margin: 4px;
+            border: none;
+            border-radius: 10px;
+        }
+
+    </style>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script>
+
+
+    $(document).ready(function(){
+        $(".thumb").css('opacity', 0.5);
+
+        $(".thumb").on("mouseover", function(){
+            $(this).css("opacity", "1");
+        })
+
+        $(".thumb").on("mouseout", function(){
+            $(this).css("opacity", "0.5");
+        })
+
+        $("#thumb1").on("click", function(){
+            $("#mainphoto").hide();
+            $("#caption").hide();
+            $("#mainphoto").attr("src", $(this).attr("src")).fadeIn();
+            $("#caption").html($(this).attr("caption")).fadeIn();
+            $(".thumb").css("border-color", "transparent");
+            $(this).css("border-color", "grey");
+            $(this).css("border-radius", "25px");
+            $(this).css("border-width", "5px");
+
+        })
+
+        $("#thumb2").on("click", function(){
+            $("#mainphoto").hide();
+            $("#caption").hide();
+            $("#mainphoto").attr("src", $(this).attr("src")).fadeIn();
+            $("#caption").html($(this).attr("caption")).fadeIn();
+            $(".thumb").css("border-color", "transparent");
+            $(this).css("border-color", "gray");
+            $(this).css("border-radius", "25px");
+            $(this).css("border-width", "5px");
+
+        })
+
+        $("#thumb3").on("click", function(){
+            $("#mainphoto").hide();
+            $("#caption").hide();
+            $("#mainphoto").attr("src", $(this).attr("src")).fadeIn();
+            $("#caption").html($(this).attr("caption")).fadeIn();
+            $(".thumb").css("border-color", "transparent");
+            $(this).css("border-color", "gray");
+            $(this).css("border-radius", "25px");
+            $(this).css("border-width", "5px");
+
+        })
+
+        $("#thumb4").on("click", function(){
+            $("#mainphoto").hide();
+            $("#caption").hide();
+            $("#mainphoto").attr("src", $(this).attr("src")).fadeIn();
+            $("#caption").html($(this).attr("caption")).fadeIn();
+            $(".thumb").css("border-color", "transparent");
+            $(this).css("border-color", "gray");
+            $(this).css("border-radius", "25px");
+            $(this).css("border-width", "5px");
+
+        })
+
+        $("#thumb5").on("click", function(){
+            $("#mainphoto").hide();
+            $("#caption").hide();
+            $("#mainphoto").attr("src", $(this).attr("src")).fadeIn();
+            $("#caption").html($(this).attr("caption")).fadeIn();
+            $(".thumb").css("border-color", "transparent");
+            $(this).css("border-color", "gray");
+            $(this).css("border-radius", "25px");
+            $(this).css("border-width", "5px");
+
+        })
+    });
+</script>
+  </head>
+
+  <body>
+
+    <div class="navbar">
+        <a href="product_purchase_page.html">Product</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+
+        <a href="YndoHomepage.html"><img src="yndo logo.png" width="150px" alt="Hyperlinked Image"></a>
+
+        <div class="dropdown">
+            &nbsp&nbsp&nbsp&nbsp&nbsp<a href="#">About Us</a>
+            <div class="dropdown-content">
+                <a href="marketplace.html">Marketplace / Competitive Analysis</a>
+                <a href="investment.html">Investment / Business Model</a>
+                <a href="about.html">About</a>
+                <a href="stateHolders.html">Stakeholders Page</a>
+                <a href="behindTheScrenes.html">Behind the Scenes Page</a>
+                <a href="websiteTeam.html">Website Team</a>
+            </div>
+        </div>
+    
+    </div>
+
+    <div id="content">
+
+        <div id="slogan">
+            <h1>Meal Prep Made Easy</h1>
+        </div>
+    
+        <div id="photogallery">
+
+            <div id="main">
+                <img src="YNDO1_Blue.png" name="mainphoto"  id="mainphoto">
+            </div>
+
+            <div id="thumbnails">
+                <img src="YNDO1_Blue.png" class="thumb" id="thumb1">
+                <img src="YNDO1_Blue.png" class="thumb" id="thumb2"> 
+                <img src="YNDO1_Blue.png" class="thumb" id="thumb3">
+                <img src="YNDO1_Blue.png" class="thumb" id="thumb4">
+                <img src="YNDO1_Blue.png" class="thumb" id="thumb5">
+            </div>
+        
+        <div id="mainbanner">
+            <img src="YNDO1_Blue.png" class="productimage">
+            <h2>Yndo Bowl offers an innovative all-in-one solution that simplifies meal preparation, cooking, and storage.</h2><br>
+            <a href="about.html"><button type="button">Learn More</button></a>
+        </div>
+
+        <div id="features">
+            <div id="feature1">
+                <img src="YNDO2.png" class="productimage">
+                <p>Ceramic insulated outer layer and an integrated steel plate for induction cooking and microwaving, allows users to cook and heat meals directly in the bowl.</p>
+            </div>
+            <div id="feature2">
+                <img src="YNDO1_Grey.png" class="productimage">
+                <p>Insulation keeps the bottom cool to the touch for easy handling and maintains food temperature for long periods of time.</p>
+            </div>
+
+            <div id="reviews">
+                <h2>See why customers are raving about the Yndo bowl!</h2>
+                <ul>
+                    <li>"Absolutely Essential!" - Emily K.</li>
+                    <li>"Worth Every Penny" - Jordan B.</li>
+                    <li>"Highly Recommend!" - Chris T.</li>
+                </ul>
+            </div>
+
+            <div id="buy">
+                <h1>Try the Yndo Bowl <strong>Today</strong> !</h1>
+                <a href="product_purchase_page.html"><button type="button">Browse Our Options</button></a>
+                
+            </div>
+        </div>
+
+        <div id="reviews"></div>
+
+    <div id="buy"></div>
+    
+  </body>
+</html>
