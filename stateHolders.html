@@ -1,5 +1,5 @@
 <html>
-    <title> StateHolders </title>
+    <title> Stakeholders </title>
     <meta charset="utf-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,6 @@
             margin: 0;
             padding: 0;
             background-image: linear-gradient(to bottom right, rgb(240, 247, 244), #c7ebdf);
-            text-align: center;
         }
 
         #slogan {
@@ -41,6 +40,19 @@
             min-width: 200px;
             z-index: 1;
             border-radius: 15px;
+        }
+
+        #content {
+            margin: 5%;
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+        }
+
+        #content h1 {
+            font-family: Dela Gothic One;
+            font-size: 36px;
+            color: #096a5e;
         }
 
         .dropdown-content a {
@@ -81,6 +93,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
+            margin: auto;
         }
 
         .personImage{
@@ -88,6 +101,8 @@
             width: 250px;
             height: 250px;
         }
+
+        .personImage {object-fit: cover;}
 
         </style>
         
@@ -114,8 +129,8 @@
         
         </div>
 
-        <h1 id="slogan">StateHolders</h1>
-
+        <div id="content">
+            <h1>Stakeholders</h1>
         <div id="imageGallery">
 
             <img src="fresh.png" alt="Image of person" class="personImage">
@@ -125,6 +140,7 @@
             <img src="mom.png" alt="Image of person" class="personImage">
 
         </div>
+    </div>
 
     </body>
 
