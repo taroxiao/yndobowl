@@ -174,10 +174,14 @@
         }
 
         #productdesc {
+            margin-top: 32px;
+            padding-top: 16px;
+            padding-bottom: 16px;
             background-color: white;
             font-family: Lexend Deca;
-            margin-left: 20px; /* Adjust margin as needed */
-            margin-right: 20px; /* Adjust margin as needed */
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 16px;
       
         }
 
@@ -201,20 +205,43 @@
             float: left;
             
         }
+
+        #options {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            padding-bottom: 16px;
+        }
+
+        #options input {
+            font-family: Lexend Deca;
+            font-size: 12pt;
+        }
+        #options h4 {
+            font-family: Lexend Deca;
+        }
+
         #option1select{
             width:50%;
             float:left;
             display:block;
             background-color:white;
+            border-top-left-radius: 15px;
         }
         #option2select{
              width:50%;
              background-color:grey;
- float:left;
- display:block;
+             border-top-right-radius: 15px;
+            float:left;
+            display:block;
         }
         #optionselect{
             width:100%;
+        }
+        #option1select h2 {
+            font-family: Lexend Deca;
+        }
+        #option2select h2 {
+            font-family: Lexend Deca;
         }
         #options{
             background-color:white;
@@ -224,6 +251,9 @@
             width:100%;
             text-align:center;
             margin: auto;   
+        }
+        #addReview h3 {
+            font-family: Lexend Deca;
         }
     </style>
 </head>
@@ -296,14 +326,14 @@
             <h1>$50.00</h1>
               </div>
         <div id="option2" style="display: none;">
-            <h2>Bowl + Portable Induction Cooktop</h2>
+            <h2 style="font-family: Lexend Deca;">Bowl + Portable Induction Cooktop</h2>
             <h4>COLOR</h4>
             <input type="button" class="colorbutton" value="GREY" id="grey2">
             <input type="button" class="colorbutton" value="TAN" id="tan2">
             <input type="button" class="colorbutton" value="BLUE" id="blue2">
             <h1>$70.00</h1>
         </div>
-            <input id="option2selectdiv" type="button" value ="Add to Cart">
+            <input id="option2selectdiv" type="button" value ="Add to Cart"> 
        
     </div>
         </div>
@@ -324,6 +354,7 @@
             <h3>Share your experience with the Yndo Bowl! Your feedback helps us improve and informs others about the product.</h3>
             <input type="text" id="leaveReview">
             <input type="button" id="submitReview" value="SUBMIT">
+            <br><br><br>
       
         <script src="http://code.jquery.com/jquery.js"></script>
 
