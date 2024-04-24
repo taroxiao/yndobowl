@@ -4,6 +4,21 @@
 
     <style>
 
+        #container {
+
+            padding: 30px;
+        }
+
+        #bannerheadline{
+
+            position: absolute;
+            margin-top: 80px;
+            left: 13%;
+            text-align: center;
+            font-size: 80pt;
+            font-weight: bolder;
+        }
+
         .productimage {
             width: 75%;
         }
@@ -75,8 +90,132 @@
             margin-bottom: 20px; 
         }
 
+        #learnmore{
+
+            position: absolute;
+            top: 650px;
+            left: 170px;
+            width: 160px;
+            height: 60px;
+            font-size: 20pt;
+        }
+
+        #buynow{
+
+        position: absolute;
+        top: 650px;
+        right: 170px;
+        width: 160px;
+        height: 60px;
+        font-size: 20pt;
+    }
+
+    .floatingfeature{
+
+        position:absolute;
+       
+        height: 25px;
+        border: 4px black solid;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+
+    }
+
+    #innercontaintwo{
+
+        margin-top: 150px;
+        align-items: center;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: rgb(222, 222, 222);
+    }
+
+    .prodimgs{
+
+        align-items: center;
+
+    }
+
+        @media screen and (max-width: 1150px) {
+  body {
+    background-color: lightgreen;
+  }
+
+  #bannerheadline{
+
+margin-bottom: 300px;
+}
+
+.productimage {
+
+    margin-top: 200px;
+}
+
+.floatingfeature{
+
+visibility: hidden;
+}
+
+#learnmore{
+
+position: absolute;
+top: 800px;
+margin: 10px;
+
+}
+
+#buynow{
+
+position: absolute;
+top: 800px;
+right: 100px;
+margin: 10px;
+
+}
+
+}
+
+  @media screen and (max-width: 500px) {
+  body {
+    background-color: rgb(144, 238, 213);
+  }
+
+  #bannerheadline{
+
+font-size: 50pt;
+}
+
+
+
+.floatingfeature{
+
+visibility: hidden;
+}
+
+#learnmore{
+
+position: absolute;
+top: 700px;
+margin: 10px;
+left: 50px;
+
+}
+
+#buynow{
+
+position: absolute;
+top: 700px;
+right: 20px;
+margin: 10px;
+
+}
+
+}
+
     </style>
 
+<!--
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 
@@ -138,17 +277,19 @@
     });
 
 </script>
+-->
   </head>
 
   <body>
+<div id="container">
 
     <div class="navbar">
-        <a href="#">Product</a>
+       <span style="margin: 60px;"> <a href="#">Product</a> </span>
 
-        <a href="#"><img src="yndo logo.png" alt="Hyperlinked Image"></a>
+        <a href="#"><img src="yndo logo.png" alt="Hyperlinked Image" style="width: 90px; height: 90px; margin-top: 50px;"></a>
 
         <div class="dropdown">
-            <a href="#">About Us</a>
+            <span style="margin: 60px;"> <a href="#">About Us</a>  </span>
             <div class="dropdown-content">
                 <a href="#">Marketplace / Competitive Analysis</a>
                 <a href="#">Investment / Business Model</a>
@@ -158,10 +299,12 @@
                 <a href="#">Website Team</a>
             </div>
         </div>
+ 
     </div>
 
     <div id="content">
     
+    <!--
         <div id="photogallery">
 
             <div id="main">
@@ -169,30 +312,43 @@
             </div>
 
             <div id="thumbnails">
-                <img src="YNDO1_Blue.png" class="thumb" id="thumb1">
+                <img src="YNDO1_Grey.png" class="thumb" id="thumb1">
                 <img src="YNDO1_Blue.png" class="thumb" id="thumb2"> 
                 <img src="YNDO1_Blue.png" class="thumb" id="thumb3">
                 <img src="YNDO1_Blue.png" class="thumb" id="thumb4">
                 <img src="YNDO1_Blue.png" class="thumb" id="thumb5">
             </div>
-        
+        -->
         <div id="mainbanner">
-            <img src="YNDO1_Blue.png" class="productimage">
+            <div id="bannerheadline">Meal Prep made Easy </div>
+            <img src="YNDO1_Blue.png" class="productimage" style="margin-left: 180px;">
+            <button type="button" id="learnmore">Learn More</button>
+            <button type="button" id="buynow">Buy Now</button>
+
+            <div class="floatingfeature" style="left: 190px; top: 800px; width: 200px;"> A single container for
+                every stage of Meal Prep</div>
+
+                <div class="floatingfeature" style="left: 600px; top: 900px; width: 250px;"> Ceramic insulated outer layer +
+                    inner layer with integrated steel plate</div>
+
+                    <div class="floatingfeature" style="right: 150px; top: 800px; width: 200px;"> CCook meals in the bowl like
+                        a traditional pan</div>
+
+<div id="innercontaintwo">
             <h2>Yndo Bowl offers an innovative all-in-one solution that simplifies meal preparation, cooking, and storage.</h2>
-            <button type="button">Learn More</button>
-        </div>
+        
 
         <div id="features">
             <div id="feature1">
-                <img src="YNDO2.png" class="productimage">
+               <div class="prodimgs" style="margin-left: 10%;"> <img src="YNDO2.png" class="productimage" style="width: 500px;"> </div> 
                 <p>Ceramic insulated outer layer and an integrated steel plate for induction cooking and microwaving, allows users to cook and heat meals directly in the bowl.</p>
             </div>
             <div id="feature2">
-                <img src="YNDO1_Grey.png" class="productimage">
+                <div class="prodimgs" style="margin-left: 10%; margin-top: -200px;"> <img src="YNDO1_Grey.png" class="productimage" style="width: 500px;"> </div>
                 <p>Insulation keeps the bottom cool to the touch for easy handling and maintains food temperature for long periods of time.</p>
             </div>
 
-            <div id="reviews">
+            <div class="reviews">
                 <h2>See why customers are raving about the Yndo bowl!</h2>
                 <ul>
                     <li>"Absolutely Essential!" - Emily K.</li>
@@ -211,5 +367,7 @@
 
     <div id="buy"></div>
     
+</div> <!--end of #innercontaintwo-->
+</div>
   </body>
 </html>
