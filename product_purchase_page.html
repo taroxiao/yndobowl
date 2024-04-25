@@ -58,25 +58,10 @@
                 text-decoration: none;
             }
 
-        #features {
-        }
-
-        #feature1 {
-        }
-
-        #feature2 {
-        }
-
-        #feature3 {
-        }
-
         .productoptions {
             width: 25%;
             float: left;
             margin: auto;
-        }
-
-        .productioptionssection {
         }
 
         .productimage {
@@ -122,6 +107,7 @@
         .navbar {
             display: float;
             text-align: center;
+            margin-top: 50px;
         }
 
             .navbar a {
@@ -131,11 +117,12 @@
 
         #photogallery {
             float: left;
-            width: 45%;
+            width: 40%;
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
+            margin-left: 5%;
         }
 
         #thumbnails {
@@ -149,14 +136,14 @@
         .thumb {
             margin: 5px;
             width: 150px;
-            height: 150px;
+            height: 100px;
             border: 2px transparent solid;
             cursor: pointer;
         }
 
         #mainphoto {
-            width: 600px;
-            height: 600px;
+            width: 100%;
+            height: 100%;
             display: block;
             margin-bottom: 20px;
         }
@@ -185,30 +172,14 @@
       
         }
 
-        #reviews {
-            display: flex;
-            width:89%;
-            align-items: center;
-            margin: 30px;
-            font-size: 24px;
-            text-align: center;
-            font-family: Lexend Deca;
-        }
-
-            #reviews ul {
-                display:block;
-                list-style-type: none;
-                line-height: 2;
-            }
         #sidebar {
             width: 45%;
             float: left;
-            
+            margin-top: 50px;
         }
 
         #options {
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
+            border-radius: 15px;
             padding-bottom: 16px;
         }
 
@@ -230,7 +201,7 @@
         #option2select{
              width:50%;
              background-color:grey;
-             border-top-right-radius: 15px;
+             border-radius: 15px;
             float:left;
             display:block;
         }
@@ -247,14 +218,45 @@
             background-color:white;
             padding-top:50px;
         }
+
+        #option2selectdiv {
+            background-color: #096a5e;
+            color: white;
+            padding: 18px 32px;
+            text-align: center;
+            font-family: Dela Gothic One;
+            display: inline-block;
+            font-size: 24px;
+            margin: 4px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        #grey, #tan, #blue {
+            color: #096a5e;
+            background-color: #c7ebdf;
+            padding: 18px 32px;
+            text-align: center;
+            font-family: Dela Gothic One;
+            display: inline-block;
+            font-size: 24px;
+            margin: 4px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
         #title{
             width:100%;
             text-align:center;
             margin: auto;   
         }
-        #addReview h3 {
-            font-family: Lexend Deca;
-        }
+
+
+
+
     </style>
 </head>
 <body>
@@ -262,7 +264,7 @@
     <div class="navbar">
         <a href="product_purchase_page.html">Product</a>&nbsp&nbsp&nbsp&nbsp&nbsp
 
-        <a href="YndoHomepage.html"><img src="yndo logo.png" width="150px" alt="Hyperlinked Image"></a>
+        <a href="YndoHomepage.html"><img src="yndo logo.png" width="80px" alt="Hyperlinked Image"></a>
 
         <div class="dropdown">
             &nbsp&nbsp&nbsp&nbsp&nbsp<a href="#">About Us</a>
@@ -286,8 +288,10 @@
 
         <div id="thumbnails">
             <img src="YNDO1_Blue.png" class="thumb" id="thumb1">
-            <img src="YNDO1_Tan.png" class="thumb" id="thumb2">
-            <img src="YNDO1_Grey.png" class="thumb" id="thumb3">
+            <img src="YNDO2.png" class="thumb" id="thumb2">
+            <img src="YNDO3.png" class="thumb" id="thumb3">
+            <img src="YNDO4.png" class="thumb" id="thumb4">
+            <img src="YNDO5.png" class="thumb" id="thumb5">
         </div>
     </div>
     <div id="sidebar">
@@ -337,19 +341,47 @@
        
     </div>
         </div>
-  
-    <div id="reviews">
-        <div id="title">
-            <h2>See why customers are raving about the Yndo bowl!</h2>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div id="customerreview"> "Absolutely Essential!" - Emily K.</div>
-        <div id="customerreview"> "Worth Every Penny" - Jordan B.</div>
-        <div id="customerreview"> "Worth Every Penny" - Jordan B.</div>
 
+    <div id="features">
+            <div id="feature1">
+                <img src="YNDO2.png" class="productimage">
+                <p>Ceramic insulated outer layer and an integrated steel plate for induction cooking and microwaving, allows users to cook and heat meals directly in the bowl.</p>
+            </div>
+            <div id="feature2">
+                <p>Insulation keeps the bottom cool to the touch for easy handling and maintains food temperature for long periods of time.</p>
+                <img src="YNDO1_Blue.png" class="productimage">
     </div>
+  
+
+    <div id="reviews">
+        <div class="container">
+            <h1 class="subtitle">See What Others have to Say about YNDO!</h1> <br><br>
+    
+            <div class="reviews-list">
+                <div>
+                    <h3>"A Game Changer in the Kitchen!"</h3>
+                    <img src="RI1.png" alt="">
+                    <p>"I've been using the Yndo Bowl for a month now, and it's transformed...</p><br>
+                    <p><strong>- Sam J</strong></p>
+                </div>
+            
+                <div>
+                    <h3>"Innovative and Practical"</h3>
+                    <img src="RI2.png" alt="">
+                    <p>I bought the combo with the induction cooktop, and I must say...</p><br>
+                    <p><strong>- Linda R</strong></p>
+                </div>
+    
+                <div>
+                    <h3>"Perfect for Busy Professionals"</h3>
+                    <img src="RI3.png" alt="">
+                    <p>As someone who's always on the go, the Yndo Bowl has made it...</p><br>
+                    <p><strong>- MarkD</strong></p>
+                </div>
+            </div>
+        </div>    
+    </div>
+
         <div id="addReview">    
             <h3>Share your experience with the Yndo Bowl! Your feedback helps us improve and informs others about the product.</h3>
             <input type="text" id="leaveReview">
