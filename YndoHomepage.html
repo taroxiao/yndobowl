@@ -222,7 +222,7 @@
     padding: 20px 0;
     display: block;
     margin: auto;
-    width: 80%;
+    width: 85%;
 }
 
 .Row {
@@ -233,19 +233,14 @@
 
 #reviews h1 {
     text-align: center;
-    align-items: center; 
     margin: 30px;
     font-family: Lexend Deca;
 }
 
-.container {
-    padding: 50px 10%;
-}
-
 .reviews-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
 }
 
 #reviews h3 {
@@ -262,8 +257,33 @@
     border-radius: 15px;
 }
 
-.reviews-list div p {
+.review p {
     text-align: center;
+}
+
+@media all and (max-width: 700px) {
+
+    h1 { 
+        font-size: 36pt; 
+        padding-top: 16px;
+    }
+    #mainbanner h2 {
+        font-size: 20pt;
+        width: 90%;
+    }
+    #feature1 p { font-size: 16pt; }
+    #feature2 p { font-size: 16pt; } 
+    #features #feature1, #features #feature2 {width: 90%; }
+
+    .reviews-list {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 24px;
+    width: 100%;
+    }
+
+    #reviews { width: 100%; }
+
 }
 
 </style>
@@ -389,32 +409,30 @@
         </div>
 
             <div id="reviews">
-                <div class="container">
                     <h1 class="subtitle">See What Others have to Say about YNDO!</h1> <br><br>
             
                     <div class="reviews-list">
-                        <div>
+                        <div class="review">
                             <h3>"A Game Changer in the Kitchen!"</h3>
                             <img src="RI1.png" alt="">
                             <p>"I've been using the Yndo Bowl for a month now, and it's transformed...</p><br>
                             <p><strong>- Sam J</strong></p>
                         </div>
                     
-                        <div>
+                        <div class="review">
                             <h3>"Innovative and Practical"</h3>
                             <img src="RI2.png" alt="">
                             <p>I bought the combo with the induction cooktop, and I must say...</p><br>
                             <p><strong>- Linda R</strong></p>
                         </div>
             
-                        <div>
+                        <div class="review">
                             <h3>"Perfect for Busy Professionals"</h3>
                             <img src="RI3.png" alt="">
                             <p>As someone who's always on the go, the Yndo Bowl has made it...</p><br>
                             <p><strong>- MarkD</strong></p>
                         </div>
-                    </div>
-                </div>    
+                    </div>  
             </div>
 
             <div id="buy">
