@@ -14,7 +14,7 @@
         }
 
         .productimage {
-            width: 75%;
+            width: 100%;
         }
        
         .dropdown {
@@ -60,6 +60,7 @@
             display: float;
             font-size: 24px;
             text-align: center;
+            margin-top: 50px;
         }
             .navbar a {
                 color: black;
@@ -122,7 +123,7 @@
 
         #mainbanner button {
             background-color: #096a5e;
-            color: rgb(255, 255, 255);
+            color: white;
             padding: 18px 32px;
             text-align: center;
             font-family: Dela Gothic One;
@@ -131,18 +132,27 @@
             margin: 4px;
             border: none;
             border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
         }
+
+        #mainbanner button:hover {
+            background-color: white;
+            color: #096a5e;
+        }
+
         #mainbanner img {
-            width: 50%;
+            width: 60%;
         }
-    
-        
 
         #features {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 30px;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 100px;
             font-family: Lexend Deca;
         }
 
@@ -150,35 +160,26 @@
         #features #feature2 {
             display: flex;
             justify-content: space-between;
+            background-color: #096a5e;
             align-items: center;
             width: 80%;
             margin-bottom: 20px;
+            padding: 5%;
+            border-radius: 15px;
+            color: white;
         }
 
         #features img {
             width: 50%;
             margin-right: 20px;
+            border-radius: 30px;
         }
 
         #features p {
-            width: 60%;
+            width: 45%;
             font-size: 24px;
             text-align: left;
-        }
-
-        #reviews {
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            margin: 30px;
-            font-size: 24px;
-            text-align: center;
-            font-family: Lexend Deca;
-        }
-
-        #reviews ul {
-            list-style-type: none;
-            line-height: 2;
+            margin: 20px, 20px;
         }
 
         #buy{   
@@ -189,6 +190,7 @@
             font-size: 24px;
             text-align: center;
             font-family: Dela Gothic One;
+            cursor: pointer;
         }
 
         #buy strong {
@@ -197,8 +199,8 @@
 
 
         #buy button {
-            background-color: #ffffff;
-            color: #096a5e;
+            background-color: #096a5e;
+            color: white;
             padding: 18px 32px;
             text-align: center;
             font-family: Dela Gothic One;
@@ -207,9 +209,64 @@
             margin: 4px;
             border: none;
             border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
         }
 
-    </style>
+        #buy button:hover {
+            background-color: #ffffff;
+            color: #096a5e;
+        }
+
+#reviews  {
+    padding: 20px 0;
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+.Row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#reviews h1 {
+    text-align: center;
+    align-items: center; 
+    margin: 30px;
+    font-family: Lexend Deca;
+}
+
+.container {
+    padding: 50px 10%;
+}
+
+.reviews-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
+}
+
+#reviews h3 {
+    font-size: 16pt;
+    line-height: 30px;
+}
+
+.reviews-list div{
+    background-color: #096a5e;
+    color: white;
+    padding: 40px;
+    font-size: 12pt;
+    font-weight: 300;
+    border-radius: 15px;
+}
+
+.reviews-list div p {
+    text-align: center;
+}
+
+</style>
 
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
@@ -294,14 +351,13 @@
     <div class="navbar">
         <a href="product_purchase_page.html">Product</a>&nbsp&nbsp&nbsp&nbsp&nbsp
 
-        <a href="YndoHomepage.html"><img src="yndo logo.png" width="150px" alt="Hyperlinked Image"></a>
+        <a href="YndoHomepage.html"><img src="yndo logo.png" width="80px" alt="Hyperlinked Image"></a>
 
         <div class="dropdown">
             &nbsp&nbsp&nbsp&nbsp&nbsp<a href="#">About Us</a>
             <div class="dropdown-content">
                 <a href="marketplace.html">Marketplace / Competitive Analysis</a>
                 <a href="investment.html">Investment / Business Model</a>
-                <a href="about.html">About</a>
                 <a href="stateHolders.html">Stakeholders Page</a>
                 <a href="behindTheScrenes.html">Behind the Scenes Page</a>
                 <a href="websiteTeam.html">Website Team</a>
@@ -315,25 +371,11 @@
         <div id="slogan">
             <h1>Meal Prep Made Easy</h1>
         </div>
-    
-        <div id="photogallery">
-
-            <div id="main">
-                <img src="YNDO1_Blue.png" name="mainphoto"  id="mainphoto">
-            </div>
-
-            <div id="thumbnails">
-                <img src="YNDO1_Blue.png" class="thumb" id="thumb1">
-                <img src="YNDO1_Blue.png" class="thumb" id="thumb2"> 
-                <img src="YNDO1_Blue.png" class="thumb" id="thumb3">
-                <img src="YNDO1_Blue.png" class="thumb" id="thumb4">
-                <img src="YNDO1_Blue.png" class="thumb" id="thumb5">
-            </div>
         
         <div id="mainbanner">
-            <img src="YNDO1_Blue.png" class="productimage">
+            <img src="YNDO2.png" class="productimage">
             <h2>Yndo Bowl offers an innovative all-in-one solution that simplifies meal preparation, cooking, and storage.</h2><br>
-            <a href="about.html"><button type="button">Learn More</button></a>
+            <a href="product_purchase_page.html"><button type="button">Learn More</button></a>
         </div>
 
         <div id="features">
@@ -342,17 +384,37 @@
                 <p>Ceramic insulated outer layer and an integrated steel plate for induction cooking and microwaving, allows users to cook and heat meals directly in the bowl.</p>
             </div>
             <div id="feature2">
-                <img src="YNDO1_Grey.png" class="productimage">
                 <p>Insulation keeps the bottom cool to the touch for easy handling and maintains food temperature for long periods of time.</p>
-            </div>
+                <img src="YNDO1_Blue.png" class="productimage">
+        </div>
 
             <div id="reviews">
-                <h2>See why customers are raving about the Yndo bowl!</h2>
-                <ul>
-                    <li>"Absolutely Essential!" - Emily K.</li>
-                    <li>"Worth Every Penny" - Jordan B.</li>
-                    <li>"Highly Recommend!" - Chris T.</li>
-                </ul>
+                <div class="container">
+                    <h1 class="subtitle">See What Others have to Say about YNDO!</h1> <br><br>
+            
+                    <div class="reviews-list">
+                        <div>
+                            <h3>"A Game Changer in the Kitchen!"</h3>
+                            <img src="RI1.png" alt="">
+                            <p>"I've been using the Yndo Bowl for a month now, and it's transformed...</p><br>
+                            <p><strong>- Sam J</strong></p>
+                        </div>
+                    
+                        <div>
+                            <h3>"Innovative and Practical"</h3>
+                            <img src="RI2.png" alt="">
+                            <p>I bought the combo with the induction cooktop, and I must say...</p><br>
+                            <p><strong>- Linda R</strong></p>
+                        </div>
+            
+                        <div>
+                            <h3>"Perfect for Busy Professionals"</h3>
+                            <img src="RI3.png" alt="">
+                            <p>As someone who's always on the go, the Yndo Bowl has made it...</p><br>
+                            <p><strong>- MarkD</strong></p>
+                        </div>
+                    </div>
+                </div>    
             </div>
 
             <div id="buy">
