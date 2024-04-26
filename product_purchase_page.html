@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dela+Gothic+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Gowun+Batang&family=IM+Fell+English&family=Instrument+Serif&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Noto+Sans+SC:wght@100..900&family=Outfit:wght@100..900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to bottom right, rgb(240, 247, 244), #c7ebdf);
+            text-align: center;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #f1f1f1;
+                }
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        .navbar {
+            font-family: Dela Gothic One;
+            display: float;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+            .navbar a {
+                color: black;
+                text-decoration: none;
+            }
+
+        #topSection {
+            display: block;
+            margin: auto;
+        }
+
+        .productoptions {
+            width: 25%;
+            float: left;
+            margin: auto;
+        }
+
+        .productimage {
+            width: 75%;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            border-radius: 15px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            z-index: 1;
+            border-radius: 15px;
+        }
+
+            .dropdown-content a {
+                font-size: 20px;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                border-radius: 15px;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #096a5e;
+                    color: white;
+                }
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            font-family: Lexend Deca;
+            background-color: rgb(240, 247, 244);
+        }
+
+        .navbar {
+            display: float;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+            .navbar a {
+                color: black;
+                text-decoration: none;
+            }
+
+        #photogallery {
+            float: left;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-left: 5%;
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            width: auto;
+        }
+
+        .thumb {
+            margin: 5px;
+            width: 150px;
+            height: 100px;
+            border: 2px transparent solid;
+            cursor: pointer;
+        }
+
+        #mainphoto {
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        #slogan {
+            display: block;
+            margin: auto;
+            font-size: 40px;
+            clear: both;
+            color: #096a5e;
+            text-align: center;
+            font-family: Dela Gothic One;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+
+        #productdesc {
+            margin-top: 32px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            background-color: white;
+            font-family: Lexend Deca;
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 16px;
+      
+        }
+
+        #sidebar {
+            width: 45%;
+            float: left;
+            margin-top: 50px;
+        }
+
+        #options {
+            border-radius: 15px;
+            padding-bottom: 16px;
+        }
+
+        #options input {
+            font-family: Lexend Deca;
+            font-size: 12pt;
+        }
+        #options h4 {
+            font-family: Lexend Deca;
+        }
+
+        #option1select{
+            width:50%;
+            float:left;
+            display:block;
+            background-color:#096a5e;
+            border-radius: 15px;
+            color: white;
+        }
+        #option2select{
+             width:50%;
+             background-color:white;
+             border-radius: 15px;
+            float:left;
+            display:block;
+        }
+        #optionselect{
+            width:100%;
+        }
+        #option1select h2 {
+            font-family: Lexend Deca;
+        }
+        #option2select h2 {
+            font-family: Lexend Deca;
+        }
+        #options{
+            background-color:white;
+            padding-top:50px;
+        }
+
+        #option2selectdiv {
+            background-color: #096a5e;
+            color: white;
+            padding: 18px 32px;
+            text-align: center;
+            font-family: Dela Gothic One;
+            display: inline-block;
+            font-size: 24px;
+            margin: 4px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        #grey, #tan, #grey2, #tan2{
+            color: #096a5e;
+            background-color: #c7ebdf;
+            padding: 18px 32px;
+            text-align: center;
+            font-family: Dela Gothic One;
+            display: inline-block;
+            font-size: 24px;
+            margin: 4px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        #blue, #blue2 {
+            background-color: #096a5e;
+            color: #c7ebdf;
+            padding: 18px 32px;
+            text-align: center;
+            font-family: Dela Gothic One;
+            display: inline-block;
+            font-size: 24px;
+            margin: 4px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        #title{
+            width:100%;
+            text-align:center;
+            margin: auto;   
+        }
+
+        #bottomSection {
+            display: block;
+            margin: auto;
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        /* Features */
+
+        #features {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 100px;
+            font-family: Lexend Deca;
+
+        }
+
+        #feature1, #feature2, #feature3 {
+            display: flex;
+            justify-content: space-between;
+            background-color: #096a5e;
+            align-items: center;
+            width: 80%;
+            margin-bottom: 20px;
+            padding: 5%;
+            border-radius: 15px;
+            color: white;
+        }
+
+        #features img {
+            width: 50%;
+            margin-right: 20px;
+            border-radius: 30px;
+        }
+
+        #features p {
+            width: 45%;
+            font-size: 20px;
+            text-align: left;
+            margin: 20px, 20px;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #topSection, #bottomSection{
+            width: 100%; 
+        }
+
+       
+    </style>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+	$(".thumb").on("click", function(){
+		$(".thumb").css("border-color", "transparent");
+		$(this).css("border-color", "purple");
+		
+		$("#mainphoto").attr("src", $(this).attr("src"))
+	})
+
+
+	$(".thumb").on("mouseover", function(){
+		$(this).css("opacity", "1");
+	})
+
+	$(".thumb").on("mouseout", function(){
+		$(this).css("opacity", "0.75");
+	})
+});
+
+</script>
+
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="product_purchase_page.html">Product</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+
+        <a href="YndoHomepage.html"><img src="yndo logo.png" width="80px" alt="Hyperlinked Image"></a>
+
+        <div class="dropdown">
+            &nbsp&nbsp&nbsp&nbsp&nbsp<a href="#">About Us</a>
+            <div class="dropdown-content">
+                <a href="marketplace.html">Marketplace / Competitive Analysis</a>
+                <a href="investment.html">Investment / Business Model</a>
+                <a href="stateHolders.html">Stakeholders Page</a>
+                <a href="behindTheScrenes.html">Behind the Scenes Page</a>
+                <a href="websiteTeam.html">Website Team</a>
+            </div>
+        </div>
+
+    </div>
+
+<div id="container">
+
+<div id="topSection">    
+
+    <div id="photogallery">
+
+        <div id="main">
+            <img src="YNDO1_Blue.png" name="mainphoto" id="mainphoto">
+        </div>
+
+        <div class="thumbnails">
+            <img src="YNDO1_Blue.png" class="thumb" id="thumb1">
+            <img src="YNDO2.png" class="thumb" id="thumb2">
+            <img src="YNDO3.png" class="thumb" id="thumb3">
+            <img src="YNDO4.png" class="thumb" id="thumb4">
+            <img src="YNDO5.png" class="thumb" id="thumb5">
+        </div>
+    </div>
+    <div id="sidebar">
+    <div id="productdesc">
+        <h1 id="slogan">YNDO BOWL</h1>
+        <p style="margin-left:  50px; margin-right:  50px; font-size: 24px; text-align: left;">
+            The Yndo Bowl is designed for the modern home chef who seeks convenience without compromising on quality. It's the perfect kitchen companion, allowing you to cook, store, and even transport your meals in a single container. Crafted with a ceramic insulated outer layer and an integrated steel plate, the Yndo Bowl works seamlessly on induction stovetops and remains cool to the touch.
+        </p>
+        <p>
+            - Material: Ceramic outer layer with an integrated steel plate
+        </p>
+        <p>Compatibility: Induction stovetop suitable</p>
+        <p>
+            Features: Sealable lid, microwavable, dishwasher safe
+        </p>
+        <p>
+            Dimensions: Standard size suitable for single servings
+        </p>
+    </div>
+    <div id="optionselct">
+        <div id="option1select">
+            <h2>YNDO BOWL</h2>
+        </div>
+        <div id="option2select">
+            <h2>YNDO BOWL Combo</h2>
+        </div>
+    </div>
+    <div id="options">
+       
+        <br>
+        <div id="option1">
+            <h4>COLOR</h4>
+            <input type="button" class="colorbutton" value="GREY" id="grey">
+            <input type="button" class="colorbutton" value="TAN" id="tan">
+            <input type="button" class="colorbutton" value="BLUE" id="blue">
+            <h1>$50.00</h1>
+              </div>
+        <div id="option2" style="display: none;">
+            <h2 style="font-family: Lexend Deca;">Bowl + Portable Induction Cooktop</h2>
+            <h4>COLOR</h4>
+            <input type="button" class="colorbutton" value="GREY" id="grey2">
+            <input type="button" class="colorbutton" value="TAN" id="tan2">
+            <input type="button" class="colorbutton" value="BLUE" id="blue2">
+            <h1>$70.00</h1>
+        </div>
+            <input id="option2selectdiv" type="button" value ="Add to Cart"> 
+       
+    </div>
+        </div>
+</div>
+
+<div id="bottomSection">
+
+<div id="features">
+
+    <div id="feature1">
+        <img src="YNDO2.png" class="productimage">
+        <p><strong>Versatile Cooking Options</strong><br><br>
+        - Cook on Any Induction Stovetop: Thanks to its integrated steel plate, the Yndo Bowl is perfectly compatible with induction stovetops, allowing you to cook directly in the bowl.<br><br>
+        - Insulated Ceramic Layer: The dual-layer design with a ceramic outer layer ensures that the bowl remains cool to the touch while cooking. This feature not only enhances safety but also makes it easy to handle and transport immediately after cooking.</p>
+    </div>
+
+    <div id="feature2">
+        <img src="YNDO3.png" class="productimage">
+        <p><strong>Optimized for Storage and Portability</strong><br><br>
+            - Stay-Cool Exterior: The insulated outer layer not only keeps the bowl cool to the touch but also retains heat inside, keeping your meals warm longer. <br><br>
+        - Lightweight and Durable Design: Crafted to withstand daily use, the Yndo Bowl is both a practical and lasting addition to your kitchen arsenal.
+    </div>
+
+    <div id="feature3">
+        <img src="YNDO4.png" class="productimage">
+        <p><strong>Easy to Use and Clean</strong><br><br>
+        - Seamless Cleaning Experience: Unlike other meal prep options, the Yndo Bowl can go straight from your stovetop to your dishwasher, thanks to its unique sealable lid and microwavable properties, making cleaning up a breeze.<br><br>
+        - No Separate Parts: The all-in-one design means there are no separate parts to lose or fuss over. This simplicity ensures a hassle-free cooking and cleaning process.
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+      
+        <script src="http://code.jquery.com/jquery.js"></script>
+
+        <script>
+            document.querySelector('#option1select').addEventListener("click", function () {
+                document.querySelector('#option1select').style.backgroundColor = '#096a5e';
+                document.querySelector('#option1select').style.color = 'white';
+                document.querySelector('#option2select').style.backgroundColor = 'white';
+                document.querySelector('#option2select').style.color = 'black';
+            });
+
+            document.querySelector('#option2select').addEventListener("click", function () {
+                document.querySelector('#option2select').style.backgroundColor = '#096a5e';
+                document.querySelector('#option2select').style.color = 'white';
+                document.querySelector('#option1select').style.backgroundColor = 'white';
+                document.querySelector('#option1select').style.color = 'black';
+            });
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('option1select').addEventListener('click', function () {
+                    document.getElementById('option1').style.display = 'block';
+                    document.getElementById('option2').style.display = 'none';
+                });
+
+                document.getElementById('option2select').addEventListener('click', function () {
+                    document.getElementById('option1').style.display = 'none';
+                    document.getElementById('option2').style.display = 'block';
+                });
+            });
+
+            document.querySelector('#grey').addEventListener('click', function () {
+                document.querySelector('#mainphoto').src = 'YNDO1_Grey.png';
+
+                document.getElementById('grey').style.backgroundColor = '#096a5e';
+                document.getElementById('grey').style.color = '#c7ebdf';
+
+                document.getElementById('blue').style.backgroundColor = '#c7ebdf';
+                document.getElementById('blue').style.color = '#096a5e';
+
+                document.getElementById('tan').style.backgroundColor = '#c7ebdf';
+                document.getElementById('tan').style.color = '#096a5e';
+
+            })
+            document.querySelector('#tan').addEventListener('click', function () {
+                document.querySelector('#mainphoto').src = 'YNDO1_Tan.png';
+
+                document.getElementById('tan').style.backgroundColor = '#096a5e';
+                document.getElementById('tan').style.color = '#c7ebdf';
+
+                document.getElementById('blue').style.backgroundColor = '#c7ebdf';
+                document.getElementById('blue').style.color = '#096a5e';
+
+                document.getElementById('grey').style.backgroundColor = '#c7ebdf';
+                document.getElementById('grey').style.color = '#096a5e';
+
+            })
+            document.querySelector('#blue').addEventListener('click', function () {
+                document.querySelector('#mainphoto').src = 'YNDO1_Blue.png';
+
+                document.getElementById('blue').style.backgroundColor = '#096a5e';
+                document.getElementById('blue').style.color = '#c7ebdf';
+
+                document.getElementById('grey').style.backgroundColor = '#c7ebdf';
+                document.getElementById('grey').style.color = '#096a5e';
+
+                document.getElementById('tan').style.backgroundColor = '#c7ebdf';
+                document.getElementById('tan').style.color = '#096a5e';
+            })
+            document.querySelector('#grey2').addEventListener('click', function () {
+                document.querySelector('#mainphoto').src = 'YNDO1_Grey.png';
+
+                document.getElementById('grey2').style.backgroundColor = '#096a5e';
+                document.getElementById('grey2').style.color = '#c7ebdf';
+
+                document.getElementById('blue2').style.backgroundColor = '#c7ebdf';
+                document.getElementById('blue2').style.color = '#096a5e';
+
+                document.getElementById('tan2').style.backgroundColor = '#c7ebdf';
+                document.getElementById('tan2').style.color = '#096a5e';
+            })
+            document.querySelector('#tan2').addEventListener('click', function () {
+                document.querySelector('#mainphoto').src = 'YNDO1_Tan.png';
+
+                document.getElementById('tan2').style.backgroundColor = '#096a5e';
+                document.getElementById('tan2').style.color = '#c7ebdf';
+
+                document.getElementById('blue2').style.backgroundColor = '#c7ebdf';
+                document.getElementById('blue2').style.color = '#096a5e';
+
+                document.getElementById('grey2').style.backgroundColor = '#c7ebdf';
+                document.getElementById('grey2').style.color = '#096a5e';
+            })
+            document.querySelector('#blue2').addEventListener('click', function () {
+                document.querySelector('#mainphoto').src = 'YNDO1_Blue.png';
+
+                document.getElementById('blue2').style.backgroundColor = '#096a5e';
+                document.getElementById('blue2').style.color = '#c7ebdf';
+
+                document.getElementById('grey2').style.backgroundColor = '#c7ebdf';
+                document.getElementById('grey2').style.color = '#096a5e';
+
+                document.getElementById('tan2').style.backgroundColor = '#c7ebdf';
+                document.getElementById('tan2').style.color = '#096a5e';
+            })
+        </script>
+
+</body>
+</html>
