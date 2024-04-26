@@ -1,0 +1,183 @@
+<html>
+    <head>
+
+        <style>
+
+            #content {
+                display: flex;
+            }
+
+            .food {
+                width: 200px;
+                z-index: 1000;
+            }
+
+            #food {
+                height: 135px;
+            }
+
+            #steelplate {
+                width: 800px;
+            }
+
+            #final {
+                display: none;
+                width: 800px;
+            }
+
+            .container {
+                display: flex;
+                width: 500px;
+                border: 2px solid black;
+                padding: 20px;
+                margin: 20px;
+            }
+
+            #assemblestation {
+                border: 2px solid black;
+                margin-left: 100px;
+            }
+
+            .yndobowl {
+                width: 500px;
+            }
+
+            #transparent {
+                position: absolute;
+                left: 50px;
+                top: 485px;
+                z-index: 2000;
+                width: 370px;
+            }
+
+            #ready {
+                margin-left: 20px;
+            }
+
+            #emptybowl {
+                display: block;
+            }
+
+            #readybowl {
+                display: none;
+            }
+
+            #cook {
+                margin: 20px;
+            }
+        </style>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+        <script>
+            $(function() {
+                var foodInBowl = 0;
+                var bowlInStation = false; // Track if the bowl is in the assemble station
+            
+                $(".food").draggable({
+                    revert: "invalid"
+                });
+            
+                $("#readybowl").draggable({
+                    revert: function(valid) {
+                        if (!valid) {
+                            bowlInStation = false;
+                            return true;
+                        }
+                    }
+                });
+            
+                $("#bowlcontainer").droppable({
+                    accept: ".food",
+                    drop: function(event, ui) {
+                        foodInBowl++;
+                        $(ui.draggable).data("inBowl", true);
+                    },
+                    out: function(event, ui) {
+                        foodInBowl--;
+                        $(ui.draggable).data("inBowl", false);
+                    }
+                });
+            
+                $("#assemblestation").droppable({
+                    accept: "#readybowl",
+                    drop: function(event, ui) {
+                        $("#steelplate").hide();
+                        $("#final").show();
+                        $("#readybowl").hide();
+                        bowlInStation = true;
+                    }
+                });
+            
+                $("#ready").click(function() {
+                    if (foodInBowl === 2) {
+                        $("#emptybowl").hide();
+                        $("#readybowl").show();
+                        $(".food").hide();
+                        $("#transparent").hide();
+                        alert("Ready! Move onto step 3.")
+                    } else {
+                        alert("Please place both food items inside the Yndo bowl.");
+                    }
+                });
+            
+                $("#cook").click(function() {
+                    if (bowlInStation) {
+                        alert("Cooking... all done!");
+                    } else {
+                        alert("Please place the Yndo bowl on the steel plate.");
+                    }
+                });
+            });
+            </script>
+            
+            
+
+    </head>
+
+    <body>
+
+        <div id="instructions">
+            <h2>Using the Yndo bowl is simple. Let's walk you through it in a few steps.</h2>
+            <ol>
+                <li>Drag the food into the bowl.</li>
+                <li>Click ready.</li>
+                <li>Place Yndo bowl on top of the heating plate.</li>
+                <li>Press cook.</li>
+            </ol>
+            <h2>All done!</h2>
+        </div>
+
+        <div id="content">
+            <div id="containers">
+                <div id="food" class="container">
+                    <div id="chicken">
+                        <img id="chickenpic" class="food" src="chicken.png">
+                    </div>
+                    <div id="rice">
+                        <img id="ricepic" class="food" src="rice.webp">
+                    </div>
+                </div>
+        
+                <div class="container" id="bowlcontainer">
+                    <img src="transparentpart.png" id="transparent">
+                    <img class="yndobowl" src="yndodraggable.png" id="emptybowl">
+                    <img class="yndobowl" src="yndodraggablewithfood.png" id="readybowl">
+                </div>
+        
+                <button type="button" id="ready">Ready</button>
+            </div>
+
+            <div id="assemblestation">
+                <img id="steelplate" src="heatingplate.png">
+                <img id="final" src="finalstage.png">
+
+                <br>
+                <button type="button" id="cook">Cook</button>
+            </div>
+
+        </div>
+
+    </body>
+</html>
