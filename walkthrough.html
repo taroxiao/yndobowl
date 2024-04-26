@@ -369,9 +369,19 @@
 
         })
 
-
-        var audio1 = new Audio('audio/a1.m4a');
+    
+        var audio1 = new Audio('audio/a1.mp3');
         audio1.play();
+
+        $('#slogan').animate(
+            {"opacity": "1", "left":"0"}, 500, function(){part2()}
+        );
+
+        var part2 = function() {
+        $('#mainbanner').animate(
+            {"opacity": "1", "bottom":"0"}, 500  
+        );
+        }
 
     });
 </script>
@@ -380,36 +390,21 @@
   <body>
 
     <div class="navbar">
-        <a href="product_purchase_page.html">Product</a>&nbsp&nbsp&nbsp&nbsp&nbsp
-
-        <a href="YndoHomepage.html"><img src="yndo logo.png" width="80px" alt="Hyperlinked Image"></a>
-
-        <div class="dropdown">
-            &nbsp&nbsp&nbsp&nbsp&nbsp<a href="#">About Us</a>
-            <div class="dropdown-content">
-                <a href="marketplace.html">Marketplace / Competitive Analysis</a>
-                <a href="investment.html">Investment / Business Model</a>
-                <a href="stateHolders.html">Stakeholders Page</a>
-                <a href="behindTheScrenes.html">Behind the Scenes Page</a>
-                <a href="websiteTeam.html">Website Team</a>
-            </div>
-        </div>
-    
+    <a href="product_purchase_page.html">Exit Walkthrough</a>
     </div>
 
     <div id="content">
 
-        <div id="slogan">
+        <div id="slogan" style="opacity: 0; left: -1000; position: absolute;">
             <h1>Meal Prep Made Easy</h1>
         </div>
         
-        <div id="mainbanner">
+        <div id="mainbanner" style="opacity: 0; bottom: -1000; position: absolute;">
             <img src="YNDO2.png" class="productimage">
             <h2>Yndo Bowl offers an innovative all-in-one solution that simplifies meal preparation, cooking, and storage.</h2><br>
-            <a href="product_purchase_page.html"><button type="button">Learn More</button></a>
         </div>
 
-        <div id="features">
+        <div id="features" style="opacity: 0;">
             <div id="feature1">
                 <img src="YNDO2.png" class="productimage">
                 <p>Ceramic insulated outer layer and an integrated steel plate for induction cooking and microwaving, allows users to cook and heat meals directly in the bowl.</p>
@@ -419,7 +414,7 @@
                 <img src="YNDO1_Blue.png" class="productimage">
         </div>
 
-            <div id="reviews">
+            <div id="reviews" style="opacity: 0;">
                     <h1 class="subtitle">See What Others have to Say about YNDO!</h1> <br><br>
             
                     <div class="reviews-list">
@@ -446,7 +441,7 @@
                     </div>  
             </div>
 
-            <div id="buy">
+            <div id="buy" style="opacity: 0;">
                 <h1>Try the Yndo Bowl <strong>Today</strong> !</h1>
                 <a href="product_purchase_page.html"><button type="button">Browse Our Options</button></a>
                 
