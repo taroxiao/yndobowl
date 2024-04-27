@@ -418,7 +418,7 @@ iframe {
         var part6 = function() {
             audio2.play();
             $('#feature1').delay(1000).animate(
-                {"opacity": "1"}, 1000, function(){part7()}
+                {"opacity": "1", "bottom":"0"}, 1000, function(){part7()}
             );
         }
 
@@ -454,15 +454,27 @@ iframe {
         };
 
         var part11 = function() {
-            $('#purchasepage').delay(6000).animate(
+            $('#purchasepage').delay(8000).animate(
                 {"opacity": "0"}, 1000, function(){part12()}
             );
+            
         }
 
         var part12 = function() {
-
+            $('#purchasepage').css("display", "none");
+            $('#logovideo').delay(5000).animate(
+                {"opacity": "1"}, 1000, function(){part13()}
+            );
+            var video = document.querySelector('#logovideo');
+            video.pause();
+            video.currentTime = 0;
+            video.load();
         }
-        audio.stop();
+
+        var part13 = function() {
+            audio4.stop();
+        }
+        
 
     });
 </script>
@@ -486,7 +498,7 @@ iframe {
         </div>
 
         <div id="features">
-            <div id="feature1" style="opacity: 0;">
+            <div id="feature1" style="opacity: 0; position: relative; bottom: -100;">
                 <img src="YNDO2.png" class="productimage" id="feature1img">
                 <p id="feature1p" style="opacity:0;">Ceramic insulated outer layer and an integrated steel plate for induction cooking and microwaving, allows users to cook and heat meals directly in the bowl.</p>
             </div>
@@ -503,6 +515,8 @@ iframe {
                 style="opacity:0;"
                 src="product_purchase_page.html">
             </iframe>
+
+            <video src="YndoLogoAnimation.mp4" id="logovideo" style="width:80%"></video>
 
             <div id="reviews" style="opacity: 0;">
                     <h1 class="subtitle">See What Others have to Say about YNDO!</h1> <br><br>
