@@ -261,6 +261,11 @@
     text-align: center;
 }
 
+iframe {
+    width: 100%;
+    height: 800px;
+}
+
 @media all and (max-width: 700px) {
 
     h1 { 
@@ -371,16 +376,82 @@
 
     
         var audio1 = new Audio('audio/a1.mp3');
+        var audio2 = new Audio('audio/a2.mp3');
+        var audio3 = new Audio('audio/a3.mp3');
+        var audio4 = new Audio('audio/a4.mp3');
         audio1.play();
 
         $('#slogan').animate(
-            {"opacity": "1", "left":"0"}, 500, function(){part2()}
+            {"opacity": "1", "left":"0"}, 1000, function(){part2()}
         );
 
         var part2 = function() {
-        $('#mainbanner').animate(
-            {"opacity": "1", "bottom":"0"}, 500  
+            $('#mainbanner').delay(1000).animate(
+            {"opacity": "1", "bottom":"-200"}, 1000, function(){part3()}  
         );
+        }
+
+        var part3 = function() {
+            $('#mainbanner').delay(2000).animate(
+            {"opacity": "1", "bottom":"0"}, 1000  
+        );
+        $('#mainbannerheader').delay(2000).animate({"opacity":"1"}, 1000);
+        $('#slogan').animate( {"opacity": "0"}, 1000, function(){part4()});
+        }
+
+
+        var part4 = function() {
+            $('#mainbannerheader').delay(6000).animate(
+                {"opacity": "0"}, 1000, function(){part5()}
+            );
+        }
+
+        var part5 = function() {
+            $('#mainbanner').delay(1500).animate(
+                {"bottom": "-1000", "opacity": "0"}, 1000, function(){part6()}
+            );
+        }
+
+        var part6 = function() {
+            audio2.play();
+            $('#feature1').delay(1000).animate(
+                {"opacity": "1"}, 1000, function(){part7()}
+            );
+        }
+
+        var part7 = function() {
+            $('#feature1p').delay(2000).animate(
+                {"opacity":"1"}, 1000, function(){part8()}
+            );
+        }
+
+        var part8 = function() {
+            $('#feature1p').delay(4000).animate(
+                {"opacity":"0"}, 1000, function(){part8()}
+            );
+            $('#feature1img').delay(4000).css("position", "relative");
+            var parentWidth = $('#feature1img').parent().width();
+            var elementWidth = $('#feature1img').width();
+            var targetLeft = (parentWidth - elementWidth) / 2;
+            $('#feature1img').animate({
+                left: targetLeft + 'px'}, 1000, function(){part9()});
+        }
+
+        var part9 = function() {
+            $('#feature1').delay(7000).animate({
+                "opacity":"0"}, 2000, function(){part10()});
+            
+        };
+
+        var part10 = function() {
+            audio4.play();
+            $('#feature1').delay(6000).css("display", "none");
+            $('#purchasepage').delay(1000).animate(
+                {"opacity": "1"}, 1000, function(){part11()});
+        };
+
+        var part11 = function() {
+
         }
 
     });
@@ -401,18 +472,27 @@
         
         <div id="mainbanner" style="opacity: 0; bottom: -1000; position: absolute;">
             <img src="YNDO2.png" class="productimage">
-            <h2>Yndo Bowl offers an innovative all-in-one solution that simplifies meal preparation, cooking, and storage.</h2><br>
+            <h2 id="mainbannerheader" style="opacity:0;">Yndo Bowl offers an innovative all-in-one solution that simplifies meal preparation, cooking, and storage.</h2><br>
         </div>
 
-        <div id="features" style="opacity: 0;">
-            <div id="feature1">
-                <img src="YNDO2.png" class="productimage">
-                <p>Ceramic insulated outer layer and an integrated steel plate for induction cooking and microwaving, allows users to cook and heat meals directly in the bowl.</p>
+        <div id="features">
+            <div id="feature1" style="opacity: 0;">
+                <img src="YNDO2.png" class="productimage" id="feature1img">
+                <p id="feature1p" style="opacity:0;">Ceramic insulated outer layer and an integrated steel plate for induction cooking and microwaving, allows users to cook and heat meals directly in the bowl.</p>
             </div>
-            <div id="feature2">
-                <p>Insulation keeps the bottom cool to the touch for easy handling and maintains food temperature for long periods of time.</p>
-                <img src="YNDO1_Blue.png" class="productimage">
-        </div>
+            <div id="feature3" style="opacity:0; display: none;">
+                <img src="YNDO4.png" class="productimage">
+                <p id="feature3p" style="opacity:0"><strong>Easy to Use and Clean</strong><br><br>
+                - Seamless Cleaning Experience: Unlike other meal prep options, the Yndo Bowl can go straight from your stovetop to your dishwasher, thanks to its unique sealable lid and microwavable properties, making cleaning up a breeze.<br><br>
+                - No Separate Parts: The all-in-one design means there are no separate parts to lose or fuss over. This simplicity ensures a hassle-free cooking and cleaning process.
+            </div>
+
+            <iframe
+                id="purchasepage"
+                title="Product Demo"
+                style="opacity:0;"
+                src="product_purchase_page.html">
+            </iframe>
 
             <div id="reviews" style="opacity: 0;">
                     <h1 class="subtitle">See What Others have to Say about YNDO!</h1> <br><br>
