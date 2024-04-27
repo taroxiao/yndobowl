@@ -381,8 +381,11 @@ iframe {
         var audio4 = new Audio('audio/a4.mp3');
         audio1.play();
 
+        var parentWidth = $('#slogan').parent().width();
+        var elementWidth = $('#slogan').width();
+        var targetLeft = (parentWidth - elementWidth) / 2;
         $('#slogan').animate(
-            {"opacity": "1", "left":"0"}, 1000, function(){part2()}
+            {left: targetLeft + 'px', opacity: 1}, 1000, function(){part2()}
         );
 
         var part2 = function() {
@@ -451,8 +454,15 @@ iframe {
         };
 
         var part11 = function() {
+            $('#purchasepage').delay(6000).animate(
+                {"opacity": "0"}, 1000, function(){part12()}
+            );
+        }
+
+        var part12 = function() {
 
         }
+        audio.stop();
 
     });
 </script>
