@@ -1,0 +1,415 @@
+<html>
+  <head>
+    <title>Yndo Bowl</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dela+Gothic+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Gowun+Batang&family=IM+Fell+English&family=Instrument+Serif&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Noto+Sans+SC:wght@100..900&family=Outfit:wght@100..900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to bottom right, rgb(240, 247, 244), #c7ebdf);
+        }
+
+        .productimage {
+            width: 100%;
+        }
+       
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            border-radius: 15px;
+        }
+
+      
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            z-index: 1;
+            border-radius: 15px;
+        }
+
+        .dropdown-content a {
+            font-size: 20px;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #096a5e;
+            color: white;
+
+        }
+
+     
+        .dropdown:hover .dropdown-content {
+            display: block;
+            font-family: Lexend Deca;
+            background-color: rgb(240, 247, 244);
+        }
+
+        .navbar{
+            font-family: Dela Gothic One;
+            display: float;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 50px;
+        }
+            .navbar a {
+                color: black;
+                text-decoration: none;
+            }
+
+
+        #slogan {
+            display: block; 
+            margin: auto;
+            font-size: 40px;
+            clear: both;
+            color: #096a5e;
+            text-align: center;
+            font-family: Dela Gothic One;
+        }
+        
+        #photogallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; 
+        }
+
+        #thumbnails {
+            display: flex;
+            justify-content: center; 
+            flex-wrap: wrap; 
+            margin-top: 20px; 
+            width: auto;
+        }
+
+        .thumb {
+            margin: 5px; 
+            width: 150px; height: 150px; 
+            border: 2px transparent solid;
+            cursor: pointer; 
+        }
+
+        #mainphoto {
+            width: 600px; height: 600px;
+            display: block;
+            margin-bottom: 20px; 
+        }
+
+        #mainbanner {
+            display: flex; 
+            margin: 30px;
+            flex-direction: column; 
+            align-items: center; 
+            font-family: Lexend Deca;
+        }
+
+        #mainbanner h2 {
+            width: 60%;
+            font-size: 34px; 
+            text-align: center; 
+            margin: 20px;
+        }
+
+        .form-row {
+            margin-bottom: 20px;
+        }
+        .summary-row { display: flex; align-items: center; margin-bottom: 10px;}
+
+        .summary-row label { flex: 1; }
+
+@media all and (max-width: 700px) {
+
+    h1 { 
+        font-size: 36pt; 
+        padding-top: 16px;
+        width: 90%;
+        display: block;
+        margin: auto;
+    }
+    #mainbanner h2 {
+        font-size: 20pt;
+        width: 90%;
+    }
+    #mainbanner img {
+        width: 100%;
+    }
+    #feature1 p { font-size: 16pt; }
+    #feature2 p { font-size: 16pt; } 
+    #features #feature1, #features #feature2 {width: 90%; }
+
+    .container { 
+        width: 80%;
+        margin: auto; 
+        padding: 20px; 
+    }
+    
+    button { 
+        padding: 10px 
+        20px; background-color: 
+        #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; }
+        button:hover { background-color: #45a049; }
+
+}
+
+</style>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script>
+
+
+    $(document).ready(function(){
+        $(".thumb").css('opacity', 0.5);
+
+        $(".thumb").on("mouseover", function(){
+            $(this).css("opacity", "1");
+        })
+
+        $(".thumb").on("mouseout", function(){
+            $(this).css("opacity", "0.5");
+        })
+
+        $("#thumb1").on("click", function(){
+            $("#mainphoto").hide();
+            $("#caption").hide();
+            $("#mainphoto").attr("src", $(this).attr("src")).fadeIn();
+            $("#caption").html($(this).attr("caption")).fadeIn();
+            $(".thumb").css("border-color", "transparent");
+            $(this).css("border-color", "grey");
+            $(this).css("border-radius", "25px");
+            $(this).css("border-width", "5px");
+
+        })
+
+        $("#thumb2").on("click", function(){
+            $("#mainphoto").hide();
+            $("#caption").hide();
+            $("#mainphoto").attr("src", $(this).attr("src")).fadeIn();
+            $("#caption").html($(this).attr("caption")).fadeIn();
+            $(".thumb").css("border-color", "transparent");
+            $(this).css("border-color", "gray");
+            $(this).css("border-radius", "25px");
+            $(this).css("border-width", "5px");
+
+        })
+
+        $("#thumb3").on("click", function(){
+            $("#mainphoto").hide();
+            $("#caption").hide();
+            $("#mainphoto").attr("src", $(this).attr("src")).fadeIn();
+            $("#caption").html($(this).attr("caption")).fadeIn();
+            $(".thumb").css("border-color", "transparent");
+            $(this).css("border-color", "gray");
+            $(this).css("border-radius", "25px");
+            $(this).css("border-width", "5px");
+
+        })
+
+        $("#thumb4").on("click", function(){
+            $("#mainphoto").hide();
+            $("#caption").hide();
+            $("#mainphoto").attr("src", $(this).attr("src")).fadeIn();
+            $("#caption").html($(this).attr("caption")).fadeIn();
+            $(".thumb").css("border-color", "transparent");
+            $(this).css("border-color", "gray");
+            $(this).css("border-radius", "25px");
+            $(this).css("border-width", "5px");
+
+        })
+
+        $("#thumb5").on("click", function(){
+            $("#mainphoto").hide();
+            $("#caption").hide();
+            $("#mainphoto").attr("src", $(this).attr("src")).fadeIn();
+            $("#caption").html($(this).attr("caption")).fadeIn();
+            $(".thumb").css("border-color", "transparent");
+            $(this).css("border-color", "gray");
+            $(this).css("border-radius", "25px");
+            $(this).css("border-width", "5px");
+
+        })
+    });
+</script>
+  </head>
+
+  <body>
+
+    <div class="navbar">
+
+        <a href="product_purchase_page.html">Product</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+
+        <a href="YndoHomepage.html"><img src="yndo logo.png" width="80px" alt="Hyperlinked Image"></a>
+
+        <div class="dropdown">
+            &nbsp&nbsp&nbsp&nbsp&nbsp<a href="#">About Us</a>
+            <div class="dropdown-content">
+                <a href="marketplace.html">Marketplace / Competitive Analysis</a>
+                <a href="investment.html">Investment / Business Model</a>
+                <a href="stateHolders.html">Stakeholders Page</a>
+                <a href="behindTheScrenes.html">Behind the Scenes Page</a>
+                <a href="websiteTeam.html">Website Team</a>
+            </div>
+        </div>
+
+    <a href="checkOutPage.html"> <img src="CheckOutImage.png" alt="Image of chart" style="width: 5%; position: absolute; left: 90%"> </a>
+    
+    </div>
+
+    <div id="content">
+        
+        <div style="border-radius: 15px; background-color: #096a5e; margin: 5%; float: left; width: 45%; padding: 2%;">
+
+                <h2>Checkout</h2>
+
+                <form>
+
+                    <div class="form-row">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="address1">Address 1:</label>
+                        <input type="text" id="address1" name="address1" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="address2">Address 2:</label>
+                        <input type="text" id="address2" name="address2">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="zip">Zip:</label>
+                        <input type="text" id="zip" name="zip" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="state">State:</label>
+                        <input type="text" id="state" name="state" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="country">Country:</label>
+                        <select id="country" name="country" required>
+                            <option value="USA">United States</option>
+                            <option value="Canada">Canada</option>
+                            <option value="UK">United Kingdom</option>
+                        </select>
+
+                    </div>
+
+                    <button id="buttonOne" type="submit">Check Out</button>
+
+                </form>
+        </div>
+
+        <div style="border-radius: 15px; background-color: #096a5e; float: left; margin-top: 5%; width: 30%; padding: 2%;">
+
+            <h2>Checkout Details</h2>
+
+            <form>
+
+                <div class="summary-row">
+                    <label>Items:</label>
+                    <div id="items">3 items selected</div>
+                </div>
+
+                <div class="summary-row">
+                    <label>Subtotal:</label>
+                    <div id="subtotal">$150.00</div>
+                </div>
+
+                <div class="summary-row">
+                    <label>You Pay:</label>
+                    <div id="total">$150.00</div>
+                </div>
+
+                <button id="buttonTwo" type="submit">Check Out</button>
+
+                <button id="buttonThree" type="submit">Empty Cart</button>
+
+            </form>
+
+        </div>
+
+    </div>
+    <script>
+
+        let productCart = JSON.parse(localStorage.getItem('productCart'));
+
+        let total = 0;
+        let subtotal = 0;
+        let items = ""
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            productCart.forEach(item => {
+            
+                subtotal += item.price
+                items = item
+
+            });
+
+            //HTML resources were consulted to do this//
+            document.querySelector('#items').innerHTML = productCart.map(item => `Type: ${item.type}, Color: ${item.color}, Price: ${item.price}`).join('<br>');
+            document.querySelector('#subtotal').innerHTML = subtotal
+            document.querySelector('#total').innerHTML = (subtotal * 1.0725)
+           
+        });
+
+        document.querySelector('#buttonOne').addEventListener('click', function () {
+            const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (regex.test(document.querySelector('#email').value)){
+                alert("You Checked Out")
+            }
+            else{
+                alert("Fix your email input")
+            }
+        })
+
+        document.querySelector('#buttonTwo').addEventListener('click', function () {
+
+            alert("You Check Out")
+        })
+
+        document.querySelector('#buttonThree').addEventListener('click', function () {
+
+            alert("You emptied your cart")
+            productCart = [];
+            localStorage.setItem('productCart', JSON.stringify(productCart));
+
+        })
+
+    </script>
+  </body>
+</html>

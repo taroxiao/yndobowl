@@ -408,6 +408,8 @@ $(document).ready(function(){
             </div>
         </div>
 
+        <a href="checkOutPage.html"> <img src="CheckOutImage.png" alt="Image of chart" style="width: 5%; position: absolute; left: 90%"> </a>
+
     </div>
 
 <div id="container">
@@ -518,11 +520,23 @@ $(document).ready(function(){
         <script src="http://code.jquery.com/jquery.js"></script>
 
         <script>
+            
+            var optionSelected = 1;
+            var colorSelect = "blue";
+            var price = 50;
+            let settings = JSON.parse(localStorage.getItem('settings')) || { 
+                        "type": 1,
+                        "color": "blue", 
+                        };
+
             document.querySelector('#option1select').addEventListener("click", function () {
                 document.querySelector('#option1select').style.backgroundColor = '#096a5e';
                 document.querySelector('#option1select').style.color = 'white';
                 document.querySelector('#option2select').style.backgroundColor = 'white';
                 document.querySelector('#option2select').style.color = 'black';
+                optionSelected = 1;
+                price = 50;
+
             });
 
             document.querySelector('#option2select').addEventListener("click", function () {
@@ -530,21 +544,48 @@ $(document).ready(function(){
                 document.querySelector('#option2select').style.color = 'white';
                 document.querySelector('#option1select').style.backgroundColor = 'white';
                 document.querySelector('#option1select').style.color = 'black';
+                optionSelected = 2
+                price = 70;
             });
             document.addEventListener('DOMContentLoaded', function () {
+
+                if (settings.type == "1") {
+                    document.getElementById('option1').style.display = 'block';
+                    document.getElementById('option2').style.display = 'none';
+                    document.querySelector('#option1select').style.backgroundColor = '#096a5e';
+                    document.querySelector('#option1select').style.color = 'white';
+                    document.querySelector('#option2select').style.backgroundColor = 'white';
+                    document.querySelector('#option2select').style.color = 'black';
+                    
+                }
+                else{
+                    document.getElementById('option1').style.display = 'none';
+                    document.getElementById('option2').style.display = 'block';
+                    document.querySelector('#option2select').style.backgroundColor = '#096a5e';
+                    document.querySelector('#option2select').style.color = 'white';
+                    document.querySelector('#option1select').style.backgroundColor = 'white';
+                    document.querySelector('#option1select').style.color = 'black';
+                }
+
                 document.getElementById('option1select').addEventListener('click', function () {
                     document.getElementById('option1').style.display = 'block';
                     document.getElementById('option2').style.display = 'none';
+                    settings.type = "1"
+                    localStorage.setItem('settings', JSON.stringify(settings));
                 });
 
                 document.getElementById('option2select').addEventListener('click', function () {
                     document.getElementById('option1').style.display = 'none';
                     document.getElementById('option2').style.display = 'block';
+                    settings.type = "2"
+                    localStorage.setItem('settings', JSON.stringify(settings));
                 });
             });
 
             document.querySelector('#grey').addEventListener('click', function () {
                 document.querySelector('#mainphoto').src = 'YNDO1_Grey.png';
+
+                colorSelect = "grey";
 
                 document.getElementById('grey').style.backgroundColor = '#096a5e';
                 document.getElementById('grey').style.color = '#c7ebdf';
@@ -559,6 +600,8 @@ $(document).ready(function(){
             document.querySelector('#tan').addEventListener('click', function () {
                 document.querySelector('#mainphoto').src = 'YNDO1_Tan.png';
 
+                colorSelect = "tan";
+
                 document.getElementById('tan').style.backgroundColor = '#096a5e';
                 document.getElementById('tan').style.color = '#c7ebdf';
 
@@ -572,6 +615,8 @@ $(document).ready(function(){
             document.querySelector('#blue').addEventListener('click', function () {
                 document.querySelector('#mainphoto').src = 'YNDO1_Blue.png';
 
+                colorSelect = "blue";
+
                 document.getElementById('blue').style.backgroundColor = '#096a5e';
                 document.getElementById('blue').style.color = '#c7ebdf';
 
@@ -583,6 +628,8 @@ $(document).ready(function(){
             })
             document.querySelector('#grey2').addEventListener('click', function () {
                 document.querySelector('#mainphoto').src = 'YNDO1_Grey.png';
+
+                colorSelect = "grey";
 
                 document.getElementById('grey2').style.backgroundColor = '#096a5e';
                 document.getElementById('grey2').style.color = '#c7ebdf';
@@ -596,6 +643,8 @@ $(document).ready(function(){
             document.querySelector('#tan2').addEventListener('click', function () {
                 document.querySelector('#mainphoto').src = 'YNDO1_Tan.png';
 
+                colorSelect = "tan";
+
                 document.getElementById('tan2').style.backgroundColor = '#096a5e';
                 document.getElementById('tan2').style.color = '#c7ebdf';
 
@@ -608,6 +657,8 @@ $(document).ready(function(){
             document.querySelector('#blue2').addEventListener('click', function () {
                 document.querySelector('#mainphoto').src = 'YNDO1_Blue.png';
 
+                colorSelect = "blue";
+
                 document.getElementById('blue2').style.backgroundColor = '#096a5e';
                 document.getElementById('blue2').style.color = '#c7ebdf';
 
@@ -617,6 +668,36 @@ $(document).ready(function(){
                 document.getElementById('tan2').style.backgroundColor = '#c7ebdf';
                 document.getElementById('tan2').style.color = '#096a5e';
             })
+
+            let productCart = [];
+            if (JSON.parse(localStorage.getItem('productCart')) === null) {
+
+                productCart = [];
+
+            }
+            else{
+                productCart = JSON.parse(localStorage.getItem('productCart'));
+            }
+           
+        
+            document.querySelector('#option2selectdiv').addEventListener('click', function () {
+                
+                //This adds to the 
+                    productCart.push(	
+
+                        { 
+                        "type": optionSelected,
+                        "color": colorSelect, 
+                        "price": price
+                        }
+
+                    );
+
+                    alert("Added to cart!");
+
+                    localStorage.setItem('productCart', JSON.stringify(productCart));
+            })
+
         </script>
 
 </body>
